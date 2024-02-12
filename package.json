@@ -1,0 +1,17 @@
+{
+  "name": "sw-interactive",
+  "version": "1.0.0",
+  "description": "Interactive Game to learn Service Workers",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --server --files css/*.css, js/*.js, *.html",
+    "start:http": "http-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jaskanwal96@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^3.0.2",
+    "http-server": "^14.1.1"
+  }
+}
