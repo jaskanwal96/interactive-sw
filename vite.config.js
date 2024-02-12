@@ -1,6 +1,6 @@
 // vite.config.js
-import { defineConfig } from 'vite';
-import eslintPlugin from 'vite-plugin-eslint';
+import { defineConfig } from 'vite'
+import eslintPlugin from 'vite-plugin-eslint'
 
 export default defineConfig({
   // Configuration options
@@ -12,4 +12,4 @@ export default defineConfig({
     open: true, // Automatically open the app in your browser on server start
   },
   plugins: [eslintPlugin()]
-});
+})
