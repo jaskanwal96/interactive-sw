@@ -1,37 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Service Worker Quest</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
     <div id="game-container">
-        <header>
-            <h1>Welcome to Service Worker Quest</h1>
-        </header>
-        <main>
-            <section id="introduction">
-                <p>Embark on a journey to save Weblandia by mastering the art of service workers.</p>
-                <img class="asset-img" src="assets/ai.png"/>
-            </section>
-            <section id="instructions">
-                <h2>Instructions</h2>
-                <ul>
-                    <li>Register your service worker.</li>
-                    <li>Cache essential assets of Weblandia.</li>
-                    <li>Implement caching strategies for offline support.</li>
-                </ul>
-            </section>
-            <section id="game-start">
-                <button id="start-game">Start Quest</button>
-            </section>
-        </main>
-        <footer>
-            <p>Made with ♥ for Web Developers</p>
-        </footer>
+      <header>
+        <h1>Welcome to Service Worker Quest</h1>
+      </header>
+      <main>
+        <section id="introduction">
+          <p>
+            Embark on a journey to save Weblandia by mastering the art of
+            service workers.
+          </p>
+          <br />
+          <img class="asset-img" src="assets/ai.png" />
+        </section>
+        <div id="quest-container"></div>
+        <section class="game-start">
+          <button id="start-cache">Start Caching</button>
+          <button id="start-notifications">Start Getting Notifications</button>
+        </section>
+      </main>
+      <footer>
+        <p>Made with ♥ for Web Developers</p>
+      </footer>
     </div>
-    <script src="js/index.js"></script>
-</body>
+    <script type="module" src="js/index.js"></script>
+  </body>
 </html>

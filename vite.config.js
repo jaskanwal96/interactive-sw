@@ -7,6 +7,13 @@ export default defineConfig({
   root: '.', // Project root directory (where your index.html is located)
   build: {
     outDir: 'dist', // Specify the output directory for build files
+    rollupOptions: {
+      output: {
+        entryFileNames: `main.js`,
+        chunkFileNames: `chunk.js`,
+        assetFileNames: `[name].[ext]`
+      }
+    }
   },
   server: {
     open: true, // Automatically open the app in your browser on server start
