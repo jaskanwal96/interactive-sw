@@ -2,13 +2,14 @@
   "name": "sw-interactive",
   "version": "1.0.0",
   "description": "Interactive Game to learn Service Workers",
-  "main": "index.js",
+  "main": "js/index.js",
   "scripts": {
     "start": "browser-sync start --server --files css/*.css, js/*.js, *.html",
     "start:http": "http-server",
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
+    "watch": "chokidar 'src/**/*' -c 'pnpm run build'",
     "test": "vitest",
     "lint": "eslint . --ext .js",
     "lint:fix": "eslint . --ext .js --fix"
@@ -20,7 +21,9 @@
     "http-server": "^14.1.1"
   },
   "devDependencies": {
+    "chokidar-cli": "^3.0.0",
     "eslint": "^8.56.0",
+    "prettier": "^3.2.5",
     "vite": "^5.1.1",
     "vite-plugin-eslint": "^1.8.1",
     "vitest": "^1.2.2"
