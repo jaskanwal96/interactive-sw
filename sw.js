@@ -64,9 +64,7 @@ self.addEventListener('notificationclick', event => {
 self.addEventListener('sync', event => {
   console.log('Service worker sync', event)
 })
-self.addEventListener('push', event => {
-  console.log('Service worker push', event)
-})
+
 self.addEventListener('beforeinstallprompt', event => {
   console.log('Service worker beforeinstallprompt', event)
 })
@@ -74,7 +72,25 @@ self.addEventListener('beforeinstallprompt', event => {
 self.addEventListener('message', event => {
   console.log('Service worker received message', event)
 })
-self.addEventListener('activate', event => {
-  console.log('Service worker activated', event)
+
+self.addEventListener('push', event => {
+  const data = event.data.json() // Assuming the server sends JSON data
+  self.registration.showNotification(data.title, {
+    body: data.body,
+    icon: 'icon.png'
+  })
 })
 
+// In your main JavaScript file
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.ready.then(registration => {
+    registration.pushManager.subscribe({ userVisibleOnly: true })
+      .then(subscription => {
+        console.log('User is subscribed to push notifications:', subscription)
+        // Send the subscription object to your server
+      })
+      .catch(error => {
+        console.error('Failed to subscribe to push notifications:', error)
+      })
+  })
+}
